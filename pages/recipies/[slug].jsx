@@ -58,7 +58,7 @@ export default function RecipieDetails({recipie}) {
 
       </div>
      
-      <div>
+      <div className="lg:w-[800px]">
         <h3>Method</h3>
         <div>{ documentToReactComponents(method)}</div>
       </div>
