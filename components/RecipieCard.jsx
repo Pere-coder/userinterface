@@ -8,7 +8,8 @@ export default function RecipieCard({ recipe }) {
 
 
   return (
-    <div className="flex flex-col gap-10 mt-20">
+    <div className="flex flex-col gap-10 mt-20 text-center">
+       <h1 className="text-[40px]">Recipie List</h1>
       <div>
         <Image src={'https:' + thumbnail.fields.file.url}
         width={500}
@@ -16,7 +17,7 @@ export default function RecipieCard({ recipe }) {
         />
       </div>
 
-      <div>
+      <div className="text-start">
         <div>
           <h4>{title}</h4>
           <p>Takes approx { cookingTime} mins to make</p>

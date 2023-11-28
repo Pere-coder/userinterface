@@ -53,13 +53,13 @@ export default function RecipieDetails({recipie}) {
           width={800}
           height={800}/>
         </div>
-        <h2>{title}</h2>
+        <h2 className="mt-10 text-[30px]">{title}</h2>
         <div>{ingredients.map((items)=> (<li key={items}>{items}</li>))}</div>
 
       </div>
      
-      <div className="lg:w-[800px]">
-        <h3>Method</h3>
+      <div className="lg:w-[800px] mt-10">
+        <h3 className="text-[30px]">Method</h3>
         <div>{ documentToReactComponents(method)}</div>
       </div>
       
