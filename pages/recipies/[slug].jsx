@@ -1,4 +1,7 @@
 import { createClient } from "contentful"
+import Image from "next/image"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -40,15 +43,25 @@ export async function getStaticProps({params}) {
  
 
 export default function RecipieDetails({recipie}) {
-    console.log(recipie)
+    const { featuredImage, title, cookingTime, ingredients, method} = recipie.fields;
   return (
-    <div>
-      Recipie Details
+    <div className="container flex flex-col items-center mx-auto py-20">
+     <h1 className="text-[40px]">Recipie Details</h1> 
       <div>
-      {recipie.fields.title}
+        <div>
+          <Image src={'https:' + featuredImage.fields.file.url}
+          width={800}
+          height={800}/>
+        </div>
+        <h2>{title}</h2>
+        <div>{ingredients.map((items)=> (<li key={items}>{items}</li>))}</div>
+
       </div>
      
-      
+      <div>
+        <h3>Method</h3>
+        <div>{ documentToReactComponents(method)}</div>
+      </div>
       
     </div>
   )
