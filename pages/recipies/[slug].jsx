@@ -47,6 +47,7 @@ export default function RecipieDetails({recipie}) {
       <div>
       {recipie.fields.title}
       </div>
+     
       
       
     </div>
