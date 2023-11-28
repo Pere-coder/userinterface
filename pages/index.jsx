@@ -21,11 +21,13 @@ export async function getStaticProps() {
 export default function Home({ recipies}) {
   console.log(recipies)
   return (
-    <div >
-        
+    <div className="container py-10 mx-auto flex  justify-center items-center" >
+        <div>
         {recipies.map((recipe) => (
         <RecipieCard key={recipe.sys.id}  recipe={recipe}/>
       ))}
+        </div>
+       
         
         
     </div>
